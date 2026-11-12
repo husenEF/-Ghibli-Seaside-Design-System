@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    /* Ghibli Summer by the Sea Color Palette */
+    --color-cream: #FAF7F2;
+    --color-ivory: #F4EFE6;
+    --color-sand: #EFE8DC;
+    --color-ocean-deep: #164E63;
+    --color-ocean: #0284C7;
+    --color-turquoise: #0D9488;
+    --color-seafoam: #99F6E4;
+    --color-sky-soft: #E0F2FE;
+    --color-sky-blue: #BAE6FD;
+    --color-coral: #E06D53;
+    --color-peach: #FDBA74;
+    --color-sage: #65A30D;
+    --color-leaf: #3F6212;
+    --color-charcoal: #1E293B;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Organic Hand-Drawn Borders & Shapes */
+.border-hand-drawn {
+  border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+}
+
+.border-hand-drawn-soft {
+  border-radius: 30px 18px 26px 20px / 20px 28px 18px 24px;
+}
+
+.border-deckle {
+  box-shadow: 0 4px 20px -2px rgba(30, 41, 59, 0.05), inset 0 0 0 1px rgba(186, 172, 150, 0.25);
+}
+
+/* Subtle watercolor paper grain effect */
+.paper-texture {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.watercolor-wash {
+  background: radial-gradient(circle at 10% 20%, rgba(224, 242, 254, 0.6) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(254, 215, 170, 0.45) 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(204, 251, 241, 0.35) 0%, transparent 60%);
+}
+
+/* Gentle Keyframe Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+}
+
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveGentle {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(4px) scaleY(1.02);
+  }
+}
+
+@keyframes sunbeamPulse {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatGentle 9s ease-in-out infinite;
+}
+
+.animate-sunbeam {
+  animation: sunbeamPulse 5s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: waveGentle 7s ease-in-out infinite;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle,
+  .animate-float-slow,
+  .animate-sunbeam,
+  .animate-wave {
+    animation: none !important;
+  }
+}
+
